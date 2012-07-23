@@ -1,6 +1,21 @@
 # Ajax Field Save 
 
-I changed best in place to just save every field on blur without having to click to edit when you pass in :always_display_edit = true.  It also includes  Shadow animation jQuery-plugin 1.7 right in the best_in_place.js file(yeah i know).  
+I changed best in place to just save every field on blur without having to click to edit when you pass in :always_display_edit = true.  It also includes  Shadow animation jQuery-plugin 1.7 right in the best_in_place.js file(yeah i know).  If anyone found a gem that already does this or a better place to start from, please let me know. :-)
+
+![On Focus the text field is displayed(after load)](https://github.com/onesupercoder/best_in_place/raw/master/images/focus.jpg)
+
+![On Change / Blur / yellow means it's processing](https://github.com/onesupercoder/best_in_place/raw/master/images/onblur.jpg)
+
+![Green means Go! - Saved Successfully](https://github.com/onesupercoder/best_in_place/raw/master/images/saved.jpg)
+
+![Save Failed](https://github.com/onesupercoder/best_in_place/raw/master/images/failed.jpg)
+
+
+**Todo**
+
+- Use a different gem? / make one?
+- Render the html on start via helper?
+- Feedback anyone?
 
 
 # A hacking of Best In Place
