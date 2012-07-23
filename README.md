@@ -1,4 +1,9 @@
-# Best In Place
+# Ajax Field Save 
+
+I changed best in place to just save every field on blur without having to click to edit when you pass in :always_display_edit = true.  It also includes  Shadow animation jQuery-plugin 1.7 right in the best_in_place.js file(yeah i know).  
+
+
+# A hacking of Best In Place
 [![Build Status](https://secure.travis-ci.org/bernat/best_in_place.png)](http://travis-ci.org/bernat/best_in_place)
 **The Unobtrusive in Place editing solution**
 
@@ -45,6 +50,7 @@ Params:
 
 Options:
 
+- **::always_display_edit** setting this to true will change best in place from in place editing to ajax on field saving.
 - **:type** It can be only [:input, :textarea, :select, :checkbox, :date (>= 1.0.4)] or if undefined it defaults to :input.
 - **:collection**: In case you are using the :select type then you must specify the collection of values it takes. In case you are
   using the :checkbox type you can specify the two values it can take, or otherwise they will default to Yes and No.
