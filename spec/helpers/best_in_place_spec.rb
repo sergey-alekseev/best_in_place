@@ -34,6 +34,12 @@ describe BestInPlace::BestInPlaceHelpers do
       lambda { helper.best_in_place(@user, :money, :display_with => :number_to_currency, :display_as => :custom) }.should raise_error(ArgumentError)
     end
 
+    it "should not allow display_as and/or display_with with always_display_edit option set" do
+      lambda { helper.best_in_place(@user, :money, :display_with => :number_to_currency, :display_as => :custom, :always_display_edit => true) }.should raise_error(ArgumentError)
+      lambda { helper.best_in_place(@user, :money, :display_as => :address_format, :always_display_edit => true) }.should raise_error(ArgumentError)
+      lambda { helper.best_in_place(@user, :money, :display_with => :number_to_currency, :always_display_edit => true) }.should raise_error(ArgumentError)
+    end
+
     describe "general properties" do
       before do
         nk = Nokogiri::HTML.parse(helper.best_in_place @user, :name)

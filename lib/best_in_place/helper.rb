@@ -10,6 +10,10 @@ module BestInPlace
         raise ArgumentError, "Can't find helper #{opts[:display_with]}"
       end
 
+      if (opts[:display_as] || opts[:display_with]) && opts[:always_display_edit]
+          raise ArgumentError, "Can't use 'display_as' or 'display_with' with always_display_edit"
+      end
+
       real_object = real_object_for object
       opts[:type] ||= :input
       opts[:collection] ||= []
@@ -42,6 +46,7 @@ module BestInPlace
       out << " data-cancel-button='#{opts[:cancel_button]}'" unless opts[:cancel_button].blank?
       out << " data-nil='#{opts[:nil]}'" unless opts[:nil].blank?
       out << " data-type='#{opts[:type]}'"
+      out << " data-always-display-edit='#{opts[:always_display_edit]}'" unless opts[:always_display_edit].blank?
       out << " data-inner-class='#{opts[:inner_class]}'" if opts[:inner_class]
       out << " data-html-attrs='#{opts[:html_attrs].to_json}'" unless opts[:html_attrs].blank?
       out << " data-original-content='#{attribute_escape(real_object.send(field))}'" if opts[:display_as] || opts[:display_with]
