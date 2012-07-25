@@ -10,8 +10,8 @@ module BestInPlace
         raise ArgumentError, "Can't find helper #{opts[:display_with]}"
       end
 
-      if (opts[:display_as] || opts[:display_with]) && opts[:always_display_edit]
-          raise ArgumentError, "Can't use 'display_as' or 'display_with' with always_display_edit"
+      if opts[:display_as] && opts[:always_display_edit]
+          raise ArgumentError, "Can't use 'display_as' with always_display_edit"
       end
 
       real_object = real_object_for object
