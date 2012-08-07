@@ -10,6 +10,11 @@ I changed best in place to just save every field on blur without having to click
 
 ![Save Failed](https://github.com/onesupercoder/best_in_place/raw/master/images/failed.jpg)
 
+**Other Features**
+
+# Supports html_attrs as a hash in the 3rd element of the array, as used in options_for_select for example: Model.map { |cst| [cst.id,cst.name,{:class => cst.client_type_id}]}
+
+
 
 **Todo**
 
