@@ -39,7 +39,7 @@ module BestInPlace
         collection = opts[:collection].to_json
       end
       out = "<span class='best_in_place'"
-      out << " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field)}'"
+      out << " id='#{BestInPlace::Utils.build_best_in_place_id(real_object, field) + (opts[:id_append] ? opts[:id_append].to_s : '')}'"
       out << " data-url='#{opts[:path].blank? ? url_for(object) : url_for(opts[:path])}'"
       out << " data-object='#{opts[:object_name] || BestInPlace::Utils.object_to_key(real_object)}'"
       out << " data-collection='#{attribute_escape(collection)}'" unless collection.blank?
